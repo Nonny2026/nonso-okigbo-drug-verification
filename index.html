@@ -1,10 +1,80 @@
-HTML
 <!DOCTYPE html>
-<html>
-  <html>
-  <Nonny2026>My App</drug-verification>
-    </Nonny2026>
-    Nonso okigbo
-<h1>Hello, your site is live!</h1>
-</Nonso okigbo>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifya - Health Product Verification</title>
+    <meta name="description" content="Verify the authenticity of your health products instantly.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M7.5 12.5L10.5 15.5L16.5 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Verifya</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="hero">
+                <h1 class="hero-title">Verify Product Authenticity</h1>
+                <p class="hero-subtitle">Enter the 10-character verification code found on your product packaging to confirm its authenticity.</p>
+            </div>
+
+            <div class="card verification-card">
+                <form id="verify-form" class="verification-form">
+                    <div class="input-group">
+                        <label for="code-input" class="visually-hidden">Verification Code</label>
+                        <input 
+                            type="text" 
+                            id="code-input" 
+                            class="code-input" 
+                            placeholder="e.g. X7K4P9Q2BZ" 
+                            autocomplete="off" 
+                            spellcheck="false"
+                            maxlength="15"
+                            aria-invalid="false"
+                        >
+                        <div id="input-hint" class="input-hint">10 characters, letters and numbers</div>
+                    </div>
+                    <button type="submit" id="verify-btn" class="btn primary-btn" disabled>
+                        <span class="btn-text">Verify Code</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </form>
+
+                <!-- Result Area -->
+                <div id="result-area" class="result-area hidden" aria-live="polite">
+                    <div class="result-content">
+                        <div class="result-icon"></div>
+                        <h2 class="result-title"></h2>
+                        <p class="result-message"></p>
+                        <div class="result-details hidden">
+                            <div class="detail-row">
+                                <span class="detail-label">Product Name:</span>
+                                <span class="detail-value" id="detail-product-name"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Verification Time:</span>
+                                <span class="detail-value" id="detail-time"></span>
+                            </div>
+                        </div>
+                        <button type="button" id="reset-btn" class="btn secondary-btn">Verify Another Code</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2026 Verifya Systems. Your privacy is protected.</p>
+        </footer>
+    </div>
+    
+    <script defer src="app.js"></script>
+</body>
 </html>
